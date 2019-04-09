@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.tbz.alishasfactory.controller.CreateController">
+  <children>
+    <BorderPane pickOnBounds="false" prefHeight="600.0" prefWidth="400.0">
+      <bottom>
+        <AnchorPane mouseTransparent="false" pickOnBounds="false" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+          <children>
+            <Button fx:id="checkoutButton" alignment="CENTER" cancelButton="true" layoutX="241.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#showCheckoutScene" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #b0deff; -fx-border-color: grey; -fx-border-color: #5abaff;" text="Checkout" textAlignment="CENTER" textFill="#435664">
+              <font>
+                <Font name="Perpetua" size="12.0" />
+              </font>
+            </Button>
+            <TextField fx:id="showTotal" cache="false" disable="false" editable="false" focusTraversable="true" layoutX="43.0" layoutY="19.0" mouseTransparent="true" opacity="1.0" pickOnBounds="false" />
+          </children>
+        </AnchorPane>
+      </bottom>
+      <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="-1.0" style="-fx-background-color: white;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+          <content>
+            <TilePane minWidth="-Infinity" prefWidth="400.0" style="-fx-background-color: white;">
+              <children>
+                <VBox prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;">
+                  <children>
+                    <TitledPane animated="false" style="-fx-background-color: white;" text="Container">
+                      <content>
+                        <Pane maxHeight="-Infinity" prefHeight="-1.0" prefWidth="400.0" style="-fx-background-color: white;">
+                          <children>
+                            <GridPane disable="false" gridLinesVisible="false" prefHeight="100.0" prefWidth="400.0">
+                              <children>
+                                <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/ContainerCone.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cone" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                <RadioButton id="coneRadio" fx:id="coneContainerRadioButton" mnemonicParsing="false" onAction="#getContainerData" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <toggleGroup>
+                                    <ToggleGroup fx:id="container" />
+                                  </toggleGroup>
+                                </RadioButton>
+                                <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/ContainerCup.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                <RadioButton id="cupRadioButton" fx:id="cupContainerRadioButton" mnemonicParsing="false" onAction="#getContainerData" text="" toggleGroup="$container" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              </children>
+                              <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </children>
+                        </Pane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" expanded="false" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;" text="Size">
+                      <content>
+                        <Pane maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;">
+                          <children>
+                            <GridPane prefHeight="150.0" prefWidth="400.0">
+                              <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SizeSmall.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Small" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                <RadioButton id="smallRadioButton" fx:id="smallSizeRadioButton" mnemonicParsing="false" onAction="#getSizeData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <toggleGroup>
+                                    <ToggleGroup fx:id="size" />
+                                  </toggleGroup>
+                                </RadioButton>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SizeMedium.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medium" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                <RadioButton id="mediumRadioButton" fx:id="mediumSizeRadioButton" mnemonicParsing="false" onAction="#getSizeData" text="" toggleGroup="$size" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SizeLarge.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Large" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton id="largeRadioButton" fx:id="largeSizeRadioButton" mnemonicParsing="false" onAction="#getSizeData" text="" toggleGroup="$size" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              </children>
+                              <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </children>
+                        </Pane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" expanded="false" style="-fx-background-color: white;" text="Flavor">
+                      <content>
+                        <ScrollPane fitToHeight="false" fitToWidth="false" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;" vbarPolicy="NEVER">
+                          <content>
+                            <Pane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;">
+                              <children>
+                                <GridPane prefHeight="400.0" prefWidth="400.0">
+                                  <children>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorChocolate.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chocolate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                    <RadioButton id="chocolateRadioButton" fx:id="chocolateFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="flavor" />
+                                                         </toggleGroup></RadioButton>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorStrawberry.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <RadioButton id="strawberryRadioButton" fx:id="strawberryFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorVanilla.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vanilla" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                    <RadioButton id="vanillaRadioButton" fx:id="vanillaFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorStracciatella.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stracciatella" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                    <RadioButton id="stracciatellaRadioButton" fx:id="stracciatellaFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorMocca.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mocca" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                    <RadioButton id="moccaRadioButton" fx:id="moccaFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorMango.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mango" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                    <RadioButton id="mangoRadioButton" fx:id="mangoFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorCoconut.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coconut" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                                    <RadioButton id="coconutRadioButton" fx:id="coconutFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/FlavorYogurt.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yogurt" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                                    <RadioButton id="yogurtRadioButton" fx:id="yogurtFlavorRadioButton" mnemonicParsing="false" onAction="#getFlavorData" text="" toggleGroup="$flavor" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                                  </children>
+                                  <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  </rowConstraints>
+                                </GridPane>
+                              </children>
+                            </Pane>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" expanded="false" style="-fx-background-color: white;" text="Sauce">
+                      <content>
+                        <Pane maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;">
+                          <children>
+                            <GridPane prefHeight="150.0" prefWidth="400.0">
+                              <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SauceChocolate.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chocolate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="chocolateSauceRadioButton" mnemonicParsing="false" onAction="#getSauceData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                  <toggleGroup>
+                                    <ToggleGroup fx:id="sauce" />
+                                  </toggleGroup>
+                                </RadioButton>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SauceStrawberry.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Strawberry" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="strawberrySauceRadioButton" mnemonicParsing="false" onAction="#getSauceData" text="" toggleGroup="$sauce" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                  <image>
+                                    <Image url="@../../../../../images/icons/SauceCaramel.png" />
+                                  </image>
+                                </ImageView>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Caramel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                <RadioButton fx:id="caramelSauceRadioButton" mnemonicParsing="false" onAction="#getSauceData" text="" toggleGroup="$sauce" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              </children>
+                              <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                            </GridPane>
+                          </children>
+                        </Pane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" expanded="false" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;" text="Topping">
+                      <content>
+                        <ScrollPane fitToHeight="false" fitToWidth="false" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;" vbarPolicy="NEVER">
+                          <content>
+                            <Pane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: white;">
+                              <children>
+                                <GridPane prefHeight="600.0" prefWidth="400.0">
+                                  <children>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsChocolateChips.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chocolate Chips" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                    <CheckBox fx:id="chocolatechipsToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsBrownie.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brownies" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="browniesToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsCookies.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text scaleX="0.9291470906123169" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cookies" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="cookiesToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsWaffle.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Waffle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="waffleToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsSmarties.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Smarties" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="smartiesToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsWalnut.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nuts" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="nutsToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsGummybears.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gummybears" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="gummybearsToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsNutella.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nutella" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="nutellaToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsWhippedCream.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Whipped Cream" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="whippedcreamToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsCereals.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cereals" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="cerealsToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsBerries.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Berries" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="berriesToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER">
+                                      <image>
+                                        <Image url="@../../../../../images/icons/ToppingsMeringues.png" />
+                                      </image>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meringues" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER" />
+                                    <CheckBox id="chocolatechipsToppingCheckBox" fx:id="meringuesToppingCheckBox" mnemonicParsing="false" onAction="#getToppingData" text="" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER" />
+                                  </children>
+                                  <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  </columnConstraints>
+                                  <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  </rowConstraints>
+                                </GridPane>
+                              </children>
+                            </Pane>
+                          </content>
+                        </ScrollPane>
+                      </content>
+                    </TitledPane>
+                  </children>
+                </VBox>
+              </children>
+            </TilePane>
+          </content>
+        </ScrollPane>
+      </center>
+      <top>
+        <GridPane prefHeight="88.0" prefWidth="400.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+          <children>
+            <ImageView fitHeight="35.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../../images/AlishasFactoryHeader.png" />
+              </image>
+            </ImageView>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
+              <children>
+                <ImageView fitHeight="74.0" fitWidth="152.0" layoutX="134.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../../../images/IceCreamAlone.png" />
+                  </image>
+                </ImageView>
+              </children>
+            </AnchorPane>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </top>
+    </BorderPane>
+  </children>
+</AnchorPane>

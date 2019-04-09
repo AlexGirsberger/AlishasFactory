@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.tbz.alishasfactory.controller.CheckoutController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="226.0" prefWidth="400.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="353.0" layoutX="79.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/AlishasFactoryLogo2.0.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="322.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="CENTER" layoutX="100.0" layoutY="99.0" prefHeight="316.0" prefWidth="400.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="136.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="264.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="110.0" valignment="TOP" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fill="#5abaff" stroke="#5e0f0f" strokeType="OUTSIDE" strokeWidth="0.0" text="Billing of:" textAlignment="CENTER" wrappingWidth="118.451171875">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="getIceCreamName" fill="#5abaff" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Container" GridPane.rowIndex="1" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fx:id="getContainerText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.valignment="TOP" />
+                              <Text fx:id="getContainerPrice" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Size" GridPane.rowIndex="2" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="getSizeText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.valignment="TOP" />
+                              <Text fx:id="getSizePrice" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Flavor" GridPane.rowIndex="3" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="getFlavorText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.valignment="TOP" />
+                              <Text fx:id="getFlavorPrice" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sauce" GridPane.rowIndex="4" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="getSauceText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.valignment="TOP" />
+                              <Text fx:id="getSaucePrice" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Toppings" GridPane.rowIndex="5" />
+                        <GridPane prefHeight="129.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text fx:id="getToppingsPrice" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.valignment="TOP" />
+                              <TextFlow fx:id="getToppingsText" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane mouseTransparent="false" pickOnBounds="false" prefHeight="62.0" prefWidth="400.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="payButton" alignment="CENTER" cancelButton="true" layoutX="241.0" layoutY="12.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: #b0deff; -fx-border-color: grey; -fx-border-color: #5abaff;" text="Pay" textAlignment="CENTER" textFill="#435664">
+                     <font>
+                        <Font name="Perpetua" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="showTotal" cache="false" disable="false" editable="false" focusTraversable="true" layoutX="43.0" layoutY="19.0" mouseTransparent="true" opacity="1.0" pickOnBounds="false" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
