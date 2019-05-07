@@ -5,6 +5,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import ch.tbz.alishasfactory.Main;
 import ch.tbz.alishasfactory.model.Container;
 import ch.tbz.alishasfactory.model.Flavor;
 import ch.tbz.alishasfactory.model.IceCream;
@@ -37,8 +41,10 @@ import javafx.event.ActionEvent;
 
 public class CreateController implements Initializable {
 	
+	private static final Logger LOGGER = LogManager.getLogger(Main.class);
 	static private String CHECKOUT_FXML = "../view/Checkout.fxml";
 
+	private String username;
 	private String iceCreamName;
 	private IceCream iceCream;
 	private Sauce sauceModel = new Sauce();
@@ -62,6 +68,9 @@ public class CreateController implements Initializable {
 	private Sauce currentSauce = null;
 	private ArrayList<Topping> currentToppings = new ArrayList<Topping>();
 
+
+    @FXML
+    private TextField iceCreamNameTextField;
 	@FXML
 	private ResourceBundle resources;
 	@FXML
@@ -158,6 +167,7 @@ public class CreateController implements Initializable {
 	public void createIceCream() {
 		iceCream = new IceCream.Builder(iceCreamName).setContainer(currentContainer).setSize(currentSize)
 				.setFlavor(currentFlavor).setSauce(currentSauce).setToppings(currentToppings).build();
+		LOGGER.info("Created icecream: " + iceCream.getName() + ".");
 	}
 
 	/**
@@ -168,6 +178,15 @@ public class CreateController implements Initializable {
 	public void setIceCreamName(String iceCreamName) {
 		this.iceCreamName = iceCreamName;
 	}
+	
+	/**
+	 * Set username.
+	 * 
+	 * @param username
+	 */
+	public void setUserName(String username) {
+		this.username = username;
+	}
 
 	/**
 	 * Add topping to Ice Cream
@@ -177,6 +196,7 @@ public class CreateController implements Initializable {
 	public void addTopping(Topping topping) {
 		if (!currentToppings.contains(topping)) {
 			currentToppings.add(topping);
+			LOGGER.info("Added Topping: " + topping.getName() + ".");
 		}
 
 	}
@@ -189,6 +209,7 @@ public class CreateController implements Initializable {
 	public void removeTopping(Topping topping) {
 		if (currentToppings.contains(topping)) {
 			currentToppings.remove(topping);
+			LOGGER.info("Removed topping: " + topping.getName() + ".");
 		}
 	}
 
@@ -200,6 +221,7 @@ public class CreateController implements Initializable {
 		String text = currentTotalPrice + ".-";
 		showTotal.setStyle("-fx-text-fill: black");
 		showTotal.setText(text);
+		LOGGER.info("Updated price: " + currentTotalPrice + ".");
 
 	}
 
@@ -215,22 +237,26 @@ public class CreateController implements Initializable {
 		if (component.getClass().isInstance(containerModel)) {
 			currentContainerPrice = component.getPrice();
 			currentContainer = (Container) component;
+			LOGGER.info("Selected container: " + component.getName() + ".");
 
 		}
 
 		if (component.getClass().isInstance(sizeModel)) {
 			currentSizePrice = component.getPrice();
 			currentSize = (Size) component;
+			LOGGER.info("Selected Size: " + component.getName() + ".");
 		}
 
 		if (component.getClass().isInstance(flavorModel)) {
 			currentFlavorPrice = component.getPrice();
 			currentFlavor = (Flavor) component;
+			LOGGER.info("Selected Flavor: " + component.getName() + ".");
 		}
 
 		if (component.getClass().isInstance(sauceModel)) {
 			currentSaucePrice = component.getPrice();
 			currentSauce = (Sauce) component;
+			LOGGER.info("Selected Sauce: " + component.getName() + ".");
 		}
 
 		if (!currentToppings.isEmpty()) {
@@ -254,18 +280,25 @@ public class CreateController implements Initializable {
 	 */
 	public boolean checkSelection() {
 
-		if (!(currentContainer == null)) {
+		if(!(iceCreamNameTextField.getText().isBlank())){
+			iceCreamName = iceCreamNameTextField.getText();
+			if (!(currentContainer == null)) {
 
-			if (!(currentSize == null)) {
+				if (!(currentSize == null)) {
 
-				if (!(currentFlavor == null)) {
+					if (!(currentFlavor == null)) {
 
-					if (!(currentSauce == null)) {
-						return true;
+						if (!(currentSauce == null)) {
+							return true;												
+						}
 					}
 				}
 			}
+		} else {
+			iceCreamNameTextField.setStyle("-fx-border-color: red");
+			LOGGER.warn("No ice cream name entered.");
 		}
+		LOGGER.warn("Some empty fields.");
 		return false;
 	}
 
@@ -327,12 +360,13 @@ public class CreateController implements Initializable {
 			Parent root = loader.<Parent>load();
 
 			CheckoutController checkoutController = loader.getController();
-			checkoutController.setIceCream(iceCream);
+			checkoutController.setUserCreation(username, iceCream);
 			checkoutController.setFields();
 
 			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			stage.setScene(new Scene(root));
 			stage.show();
+			LOGGER.info("Show Checkout Window.");
 
 		} else {
 			showTotal.setStyle("-fx-text-fill: red");
@@ -340,6 +374,15 @@ public class CreateController implements Initializable {
 		}
 
 	}
+	
+	/**
+	 * Change IceCreamName TextField
+	 * @param event
+	 */
+	 @FXML
+	    void changeIceCreamNameTextField(MouseEvent event) {
+		 	iceCreamNameTextField.setStyle("-fx-border-color: default");
+	    }
 
 	/**
 	 * Get Data from Container RadioButton

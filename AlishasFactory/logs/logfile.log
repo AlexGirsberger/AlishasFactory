@@ -1,0 +1,20 @@
+INFO  | 2019-05-06 19:59:25 | [JavaFX Application Thread] alishasfactory.Main (Main.java:34) - Show Home Window.
+WARN  | 2019-05-06 19:59:27 | [JavaFX Application Thread] controller.HomeController (HomeController.java:58) - No username entered.
+WARN  | 2019-05-06 19:59:30 | [JavaFX Application Thread] controller.HomeController (HomeController.java:58) - No username entered.
+INFO  | 2019-05-06 19:59:37 | [JavaFX Application Thread] controller.HomeController (HomeController.java:63) - Set username.
+INFO  | 2019-05-06 19:59:37 | [JavaFX Application Thread] controller.HomeController (HomeController.java:89) - Show Create Window.
+INFO  | 2019-05-06 19:59:41 | [JavaFX Application Thread] controller.CreateController (CreateController.java:199) - Added Topping: Chocolate Chips.
+INFO  | 2019-05-06 19:59:41 | [JavaFX Application Thread] controller.CreateController (CreateController.java:224) - Updated price: 0.5.
+INFO  | 2019-05-06 19:59:43 | [JavaFX Application Thread] controller.CreateController (CreateController.java:259) - Selected Sauce: Chocolate.
+INFO  | 2019-05-06 19:59:43 | [JavaFX Application Thread] controller.CreateController (CreateController.java:224) - Updated price: 1.5.
+INFO  | 2019-05-06 19:59:44 | [JavaFX Application Thread] controller.CreateController (CreateController.java:253) - Selected Flavor: Chocolate.
+INFO  | 2019-05-06 19:59:44 | [JavaFX Application Thread] controller.CreateController (CreateController.java:224) - Updated price: 3.0.
+INFO  | 2019-05-06 19:59:45 | [JavaFX Application Thread] controller.CreateController (CreateController.java:247) - Selected Size: Small.
+INFO  | 2019-05-06 19:59:45 | [JavaFX Application Thread] controller.CreateController (CreateController.java:224) - Updated price: 4.0.
+INFO  | 2019-05-06 19:59:46 | [JavaFX Application Thread] controller.CreateController (CreateController.java:240) - Selected container: Cone.
+INFO  | 2019-05-06 19:59:46 | [JavaFX Application Thread] controller.CreateController (CreateController.java:224) - Updated price: 5.5.
+WARN  | 2019-05-06 19:59:46 | [JavaFX Application Thread] controller.CreateController (CreateController.java:299) - No ice cream name entered.
+WARN  | 2019-05-06 19:59:46 | [JavaFX Application Thread] controller.CreateController (CreateController.java:301) - Some empty fields.
+INFO  | 2019-05-06 19:59:49 | [JavaFX Application Thread] controller.CreateController (CreateController.java:170) - Created icecream: 123.
+INFO  | 2019-05-06 19:59:49 | [JavaFX Application Thread] controller.CheckoutController (CheckoutController.java:86) - Set user creation of: Alex.
+INFO  | 2019-05-06 19:59:50 | [JavaFX Application Thread] controller.CreateController (CreateController.java:369) - Show Checkout Window.

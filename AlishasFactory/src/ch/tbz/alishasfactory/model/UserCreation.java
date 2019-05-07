@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class UserCreation {
 	private String username;
 	private ArrayList<IceCream> iceCreams;
-	private Double totalPrice;
+	private double totalPrice;
 
 	/**
 	 * Constructor 1 - This Constructor is called when the User has already created
@@ -64,7 +64,7 @@ public class UserCreation {
 	 * 
 	 * @return double
 	 */
-	public Double getTotalPrice() {
+	public double getTotalPrice() {
 		totalPrice = 0.0;
 		for (IceCream iceCream : iceCreams) {
 			totalPrice = totalPrice + iceCream.getPrice();

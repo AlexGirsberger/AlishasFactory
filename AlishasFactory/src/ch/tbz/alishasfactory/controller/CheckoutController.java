@@ -3,9 +3,13 @@ package ch.tbz.alishasfactory.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import ch.tbz.alishasfactory.Main;
 import ch.tbz.alishasfactory.model.IceCream;
 import ch.tbz.alishasfactory.model.Topping;
+import ch.tbz.alishasfactory.model.UserCreation;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,6 +29,9 @@ import javafx.scene.text.TextFlow;
 
 public class CheckoutController implements Initializable {
 	
+	private static final Logger LOGGER = LogManager.getLogger(Main.class);
+	
+	private UserCreation userCreation;
 	private IceCream iceCream;
 	private Text text;
 
@@ -68,13 +75,15 @@ public class CheckoutController implements Initializable {
 	private TextField showTotal;
 
 	/**
-	 * Set Ice Cream
+	 * Set User Creation
 	 * 
-	 * @param iceCream
+	 * @param username, iceCream
 	 */
-	public void setIceCream(IceCream iceCream) {
+	public void setUserCreation(String username, IceCream iceCream) {
 		this.iceCream = iceCream;
-
+		userCreation = new UserCreation(username);
+		userCreation.addIceCream(iceCream);
+		LOGGER.info("Set user creation of: " + username + ".");
 	}
 
 	/**

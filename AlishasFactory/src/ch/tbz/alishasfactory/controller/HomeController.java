@@ -4,8 +4,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import ch.tbz.alishasfactory.Main;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,13 +25,15 @@ import javafx.stage.Stage;
  * FXML file.
  * 
  * @author Alexandra Girsberger, Thamisha Thanabalasingam
- * @since 2019-04-05
+ * @since 2019-04-12
  *
  */
 
-public class HomeController {
+public class HomeController implements Initializable {
 
+	private static final Logger LOGGER = LogManager.getLogger(Main.class);
 	static private String CREATE_FXML = "../view/Create.fxml";
+	private String username;
 
 	@FXML
 	private ResourceBundle resources;
@@ -36,23 +44,25 @@ public class HomeController {
 	@FXML
 	private Button createButton;
 
-	@FXML
-	private TextField iceCreamNameTextField;
+    @FXML
+    private TextField userNameTextField;
 
 	/**
-	 * Get Ice Cream name input from user input.
+	 * Get username input.
 	 * 
-	 * @return String
+	 * @return boolean
 	 */
-	public String getIceCreamName() {
-		String iceCreamName = "";
-
-		if (iceCreamNameTextField.getText().isBlank()) {
-			iceCreamName = "User's Ice Cream";
+	public boolean getUserName() {
+	
+		if (userNameTextField.getText().isBlank()) {
+			LOGGER.warn("No username entered.");
+			return false;
+			
 		} else {
-			iceCreamName = iceCreamNameTextField.getText();
+			username = userNameTextField.getText();
+			LOGGER.info("Set username.");
+			return true;
 		}
-		return iceCreamName;
 	}
  
 	/**
@@ -64,26 +74,30 @@ public class HomeController {
 	@FXML
 	void showCreateScene(MouseEvent event) throws IOException {
 
+		if(getUserName()) {
 		URL url = getClass().getResource(CREATE_FXML);
 		FXMLLoader loader = new FXMLLoader(url);
 		Parent root = loader.<Parent>load();
 
 		// Calls method in CreateController to set ice cream name.
 		CreateController createController = loader.getController();
-		createController.setIceCreamName(getIceCreamName());
+		createController.setUserName(username);
 
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
-
+		LOGGER.info("Show Create Window.");
+		
+		} 
 	}
 
+	
 	/**
 	 * Initializes the Home Window.
 	 */
-	@FXML
-	void initialize() {
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		assert createButton != null : "fx:id=\"createButton\" was not injected: check your FXML file 'Home.fxml'.";
+		
 	}
-
 }

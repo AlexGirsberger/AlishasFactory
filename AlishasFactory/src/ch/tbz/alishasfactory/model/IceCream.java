@@ -110,7 +110,7 @@ public class IceCream {
 	private Flavor flavor;
 	private Sauce sauce;
 	private ArrayList<Topping> toppings;
-	private double price = 0.0;
+	private Double price = 0.0;
 
 	/**
 	 * Private Constructor
@@ -175,9 +175,9 @@ public class IceCream {
 	/**
 	 * Get toppings price of IceCream
 	 * 
-	 * @return double
+	 * @return Double
 	 */
-	public double getToppingPrice() {
+	public Double getToppingPrice() {
 		Double number = 0.0;
 		for (Topping topping : toppings) {
 			number = number + topping.getPrice();
@@ -188,9 +188,9 @@ public class IceCream {
 	/**
 	 * Get price of IceCream
 	 * 
-	 * @return double
+	 * @return Double
 	 */
-	public double getPrice() {
+	public Double getPrice() {
 		price = 0.0;
 		if (!size.equals(null)) {
 			price = price + size.getPrice();
@@ -269,7 +269,7 @@ public class IceCream {
 	 * 
 	 * @param price
 	 */
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
